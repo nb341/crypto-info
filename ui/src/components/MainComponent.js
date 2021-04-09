@@ -31,7 +31,7 @@ class Main extends React.Component{
     render(){
         const CoinInfoWithId = ({match})=>{
             return(
-                <CoinInfo test={match.params.id} currency={this.props.currencies.currencies.filter(x=>x.currency===match.params.id)}/>
+                <CoinInfo test={match.params.id} currency={this.props.currencies.currencies.filter(x=>x.currency===match.params.id)[0]}/>
             )
         }
         return(
@@ -41,7 +41,7 @@ class Main extends React.Component{
             <Switch>
                 <Route exact path="/" component={()=> <CryptoContent currencies={this.props.currencies}/>}/>
                 <Route exact path="/home" component={()=> <CryptoContent currencies={this.props.currencies}/>}/>
-                <Route path="/coin/:id" component={CoinInfoWithId}/>
+                <Route path="/coin/:id" render={CoinInfoWithId}/>
                 <Route exact path="/login" component={Login}/>
                 <Redirect to="/home"/>
             </Switch>

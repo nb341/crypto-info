@@ -5,11 +5,9 @@ function CoinInfo(props){
     
     //  const {id} = useParams();
     //   alert(props.currency.rank)
-    // alert(props.currency.price)
     return(
         <div className="container">
-            {props.currency.status}
-           <Chart chartFor="CoinInfo" priceData={props.currency}/>
+           <Chart chartFor="CoinInfo" priceData={props.currency.price}/>
         </div>
     )
 }

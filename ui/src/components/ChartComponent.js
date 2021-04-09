@@ -4,6 +4,7 @@ import {Line} from 'react-chartjs-2';
 
 
 class Chart extends React.Component {
+
   render() {
 
     const data = this.props.priceData.map((price, i)=>{
